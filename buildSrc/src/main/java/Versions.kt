@@ -11,6 +11,7 @@ object Versions {
     const val navigationCompose = "2.7.0"
     const val lifecycleViewModelKtx = "2.6.1"
     const val retfofit = "2.9.0"
+    const val okhttp = "4.9.0"
 
     const val hiltAndroid  ="2.50"
     const val hiltCompiler = "2.50"

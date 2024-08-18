@@ -11,6 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.lazurs.base.ResponseState
+import com.lazurs.ui.component.ArticleListPage
+import com.lazurs.ui.component.EmptyOrErrorPage
 import com.lazurs.ui.component.LoadingPage
 import com.lazurs.ui.viewmodel.MainViewModel
 
@@ -25,15 +27,15 @@ fun HomePage(mainViewModel: MainViewModel= hiltViewModel()){
     Surface(modifier = Modifier.fillMaxSize()) {
         when(articlesRes){
             is ResponseState.Loading->{
-                //todo loading
                  LoadingPage()
             }
             is ResponseState.Error->{
-                //todo error
+               EmptyOrErrorPage()
             }
             is ResponseState.Success->{
                val resData = (articlesRes as ResponseState.Success).data
                 Log.i(HOMEPAGETAG,"Success ${resData.data}")
+                ArticleListPage(listData = resData)
             }
         }
     }

@@ -79,4 +79,5 @@ dependencies {
     implementation(Dependencies.coroutineCore)
     implementation(Dependencies.coroutineAndroid)
     implementation(Dependencies.hiltNavigation)
+    implementation(Dependencies.logInterceptor)
 }

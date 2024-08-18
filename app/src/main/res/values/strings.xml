@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyComposeProject</string>
+    <string name="empty_text">empty data</string>
 </resources>

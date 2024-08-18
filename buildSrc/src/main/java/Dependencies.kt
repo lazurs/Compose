@@ -73,8 +73,12 @@ object Dependencies {
         "com.squareup.retrofit2:retrofit:${Versions.retfofit}"
     }
 
+    val logInterceptor by lazy {
+        "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
+    }
+
     val okHttp by lazy {
-        "com.squareup.okhttp3:okhttp:3.13.0"
+        "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
     }
     val gsonConvert by lazy {
         "com.squareup.retrofit2:converter-gson:${Versions.retfofit}"
