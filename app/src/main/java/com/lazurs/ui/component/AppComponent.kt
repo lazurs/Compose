@@ -14,11 +14,14 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CornerSize
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ShapeDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,6 +32,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.lazurs.R
@@ -63,10 +67,11 @@ fun LoadingPage() {
 
 @Composable
 fun EmptyOrErrorPage() {
-    Column(modifier = Modifier.fillMaxSize(),
+    Column(
+        modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-        ) {
+    ) {
         Text(
             modifier = Modifier.wrapContentSize(),
             text = stringResource(id = R.string.empty_text),
@@ -79,41 +84,52 @@ fun EmptyOrErrorPage() {
 
 @Composable
 fun ArticleListPage(listData: ArticleResponseData) {
-    LazyColumn(modifier = Modifier.fillMaxSize().background(Color.Gray)) {
-        items(items = listData.data?.datas?: emptyList()) { article->
+    LazyColumn(modifier = Modifier
+        .fillMaxSize()
+        .background(Color.Gray)) {
+        items(items = listData.data?.datas ?: emptyList()) { article ->
 
-        Card(elevation = CardDefaults.cardElevation(
-            defaultElevation = 6.dp
-        ),
-            colors = CardDefaults.cardColors(
-            containerColor = Color.White
-        ),
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(140.dp)
-                .padding(10.dp)
+            Card(
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 6.dp
+                ),
+                colors = CardDefaults.cardColors(
+                    containerColor = Color.White
+                ),
+                shape = RoundedCornerShape(
+                    corner = CornerSize(16.dp)
+                ),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(140.dp)
+                    .padding(10.dp)
 
-        ) {
-            NormalTextComponent(textValue = article.chapterName?:"")
-            NormalTextComponent(textValue = article.title?:"")
-        }
+            ) {
+                NormalTextComponent(textValue = article.chapterName ?: "")
+                NormalTextComponent(textValue = article.title ?: "")
+            }
 
         }
     }
 }
 
 @Composable
-fun NormalTextComponent(textValue: String,textStyle: TextStyle = TextStyle(
-    fontSize = 18.sp,
-    fontWeight = FontWeight.Normal,
-    color = Color.Black
-)) {
+fun NormalTextComponent(
+    textValue: String, textStyle: TextStyle = TextStyle(
+        fontSize = 18.sp,
+        fontWeight = FontWeight.Normal,
+        color = Color.Black
+    )
+) {
     Text(
         text = textValue,
         modifier = Modifier
             .wrapContentWidth()
             .padding(16.dp)
             .wrapContentHeight(),
-        style = textStyle
+        style = textStyle,
+        maxLines = 1,
+        overflow = TextOverflow.Ellipsis
+
     )
 }
