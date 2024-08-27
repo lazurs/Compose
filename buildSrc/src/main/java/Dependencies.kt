@@ -7,7 +7,7 @@ object Dependencies {
         "androidx.appcompat:appcompat:${Versions.appcompat}"
     }
     val material by lazy {
-        "com.google.android.material:material:1.12.0"
+        "com.google.android.material:material:${Versions.material}"
     }
     val coreKtx by lazy {
         "androidx.core:core-ktx:${Versions.coreKtx}"
@@ -27,22 +27,22 @@ object Dependencies {
         "androidx.activity:activity-compose:${Versions.activitCompose}"
     }
     val composeUi by lazy {
-        "androidx.compose.ui:ui:1.6.8"
+        "androidx.compose.ui:ui:${Versions.composeUi}"
     }
     val composeUiGraphic by lazy {
-        "androidx.compose.ui:ui-graphics:1.6.8"
+        "androidx.compose.ui:ui-graphics:${Versions.composeUi}"
     }
     val composeUiToolingPreview by lazy {
-        "androidx.compose.ui:ui-tooling-preview:1.6.8"
+        "androidx.compose.ui:ui-tooling-preview:${Versions.composeUi}"
     }
     val composeMaterial3 by lazy {
-        "androidx.compose.material3:material3:1.2.1"
+        "androidx.compose.material3:material3:${Versions.composeMaterial3}"
     }
-    val navigationCompose by lazy {
-        "androidx.navigation:navigation-compose:${Versions.navigationCompose}"
+    val composeBom by lazy {
+        "androidx.compose:compose-bom:${Versions.composeBom}"
     }
     val composeNavigation by lazy {
-        "androidx.navigation:navigation-compose:2.7.7"
+        "androidx.navigation:navigation-compose:${Versions.composeNavigation}"
     }
 
     //hilt
@@ -64,9 +64,6 @@ object Dependencies {
     val coroutineCore by lazy {
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
     }
-//    val composeBom by lazy {
-//        "androidx.compose:compose-bom:2024.06.00"
-//    }
 
 
     val retrofit by lazy {
@@ -86,6 +83,5 @@ object Dependencies {
     val coil by lazy {
         "io.coil-kt:coil-compose:${Versions.coil}"
     }
-
 
 }

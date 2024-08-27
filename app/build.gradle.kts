@@ -80,4 +80,5 @@ dependencies {
     implementation(Dependencies.coroutineAndroid)
     implementation(Dependencies.hiltNavigation)
     implementation(Dependencies.logInterceptor)
+    implementation(Dependencies.composeBom)
 }
