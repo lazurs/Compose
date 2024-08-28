@@ -9,6 +9,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.lazurs.base.ResponseState
 import com.lazurs.ui.component.ArticleListPage
@@ -23,7 +24,7 @@ import com.lazurs.ui.viewmodel.MainViewModel
 const val HOMEPAGETAG = "Home_Page"
 @Composable
 fun HomePage(mainViewModel: MainViewModel= hiltViewModel()){
-    val articlesRes by mainViewModel.articles.collectAsState()
+    val articlesRes by mainViewModel.articles.collectAsStateWithLifecycle()
     Surface(modifier = Modifier.fillMaxSize()) {
         when(articlesRes){
             is ResponseState.Loading->{

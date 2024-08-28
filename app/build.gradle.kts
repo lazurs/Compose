@@ -81,4 +81,5 @@ dependencies {
     implementation(Dependencies.hiltNavigation)
     implementation(Dependencies.logInterceptor)
     implementation(Dependencies.composeBom)
+    implementation(Dependencies.lifeCycleCompose)
 }

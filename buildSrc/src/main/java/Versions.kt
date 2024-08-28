@@ -22,4 +22,5 @@ object Versions {
     const val composeBom = "2024.06.00"
     const val composeMaterial3 = "1.2.1"
     const val composeNavigation = "2.7.7"
+    const val composeLifecycle ="2.8.4"
 }

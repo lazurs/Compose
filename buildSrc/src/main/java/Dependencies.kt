@@ -32,6 +32,9 @@ object Dependencies {
     val composeUiGraphic by lazy {
         "androidx.compose.ui:ui-graphics:${Versions.composeUi}"
     }
+    val lifeCycleCompose by lazy {
+        "androidx.lifecycle:lifecycle-runtime-compose-android:${Versions.composeLifecycle}"
+    }
     val composeUiToolingPreview by lazy {
         "androidx.compose.ui:ui-tooling-preview:${Versions.composeUi}"
     }
