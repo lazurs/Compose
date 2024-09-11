@@ -106,7 +106,6 @@ fun ArticleListPage(listData: ArticleResponseData) {
             .fillMaxSize()
             .background(Color.White)
     ) {
-     Log.e("zsddd","recompose1")
         items(items = showList) { article ->
             Card(
                 elevation = CardDefaults.cardElevation(
@@ -124,9 +123,8 @@ fun ArticleListPage(listData: ArticleResponseData) {
                     .padding(10.dp)
 
             ) {
-                Log.e("zsddd","recompose2")
+
                 Box(modifier = Modifier.fillMaxSize()) {
-                    Log.e("zsddd","recompose3")
                     Column {
                         Row(
                             modifier = Modifier
@@ -155,7 +153,6 @@ fun ArticleListPage(listData: ArticleResponseData) {
                             )
                     ) {
                         FavoriteImageComponent(article.isFavorite) {
-                            Log.e("zsdddd","onclick")
                             showList = showList.mapIndexed{ i, item->
                                 if (showList.indexOf(article)==i){
                                     article.copy(isFavorite = !item.isFavorite)

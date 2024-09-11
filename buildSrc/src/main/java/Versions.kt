@@ -23,4 +23,5 @@ object Versions {
     const val composeMaterial3 = "1.2.1"
     const val composeNavigation = "2.7.7"
     const val composeLifecycle ="2.8.4"
+    const val composepaging = "3.3.2"
 }

@@ -82,4 +82,6 @@ dependencies {
     implementation(Dependencies.logInterceptor)
     implementation(Dependencies.composeBom)
     implementation(Dependencies.lifeCycleCompose)
+    implementation(Dependencies.composePagingRuntime)
+    implementation(Dependencies.composePaging)
 }

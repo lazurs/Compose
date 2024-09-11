@@ -47,6 +47,12 @@ object Dependencies {
     val composeNavigation by lazy {
         "androidx.navigation:navigation-compose:${Versions.composeNavigation}"
     }
+    val composePagingRuntime by lazy {
+        "androidx.paging:paging-runtime:${Versions.composepaging}"
+    }
+    val composePaging by lazy {
+        "androidx.paging:paging-compose:${Versions.composepaging}"
+    }
 
     //hilt
     val hiltNavigation by lazy {
