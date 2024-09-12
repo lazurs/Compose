@@ -7,7 +7,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
 import com.lazurs.R
 import testapi.pages.ImageCard
+import testapi.pages.ShowText
+import testapi.pages.ShowTextFiled
 import testapi.pages.TestColumOrRow
+import testapi.pages.TestState
 
 
 /**
@@ -20,7 +23,10 @@ class ApiTstActivity:ComponentActivity() {
         setContent {
            // TestColumOrRow()
 
-            ShowCard()
+           // ShowCard()
+          //  ShowText()
+           // TestState()
+            ShowTextFiled()
         }
     }
 
